@@ -1,0 +1,24 @@
+{
+  "name": "nodejs_tutorial",
+  "version": "1.0.0",
+  "description": "Basic Webserver Tutorial in NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxthedude/nodejs_tutorial.git"
+  },
+  "author": "Markus Klausz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxthedude/nodejs_tutorial/issues"
+  },
+  "homepage": "https://github.com/maxthedude/nodejs_tutorial#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11"
+  }
+}
