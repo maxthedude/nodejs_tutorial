@@ -9,12 +9,40 @@
     <script src="express_starter.js"></script>
 </head>
 <body>
-    <form action="/" method="POST">
+    <form action="/" method="POST" id="form">
         <label for="email">E-Mail</label>
         <input type="email" name="email" type="text"> 
         <label for="name">Name</label>
         <input name="name" type="text"> 
         <input type="submit" value="Submit">
     </form>
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#form').submit((e) => {
+                e.preventDefault();
+                $.ajax({
+                    url: '/',
+                    type: 'post',
+                    contentType: 'application/json',
+                    data: JSON.stringify($('#form').serializeArray()),
+                    success: (response)=> {
+                        console.log('Got Response');
+                        console.log(response);
+                    },
+                    error: (xhr,ajaxOptions,thrownError) => {
+                        console.log(xhr.status);
+                        console.log(thrownError);
+                    }
+                })
+            })
+        });
+    </script>
 </body>
+
 </html>
